@@ -4,7 +4,6 @@ import com.sweep.projectsweep.jooq.tables.pojos.Profile;
 import org.jooq.DSLContext;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
-
 import static com.sweep.projectsweep.jooq.Tables.PROFILE;
 
 @Repository
