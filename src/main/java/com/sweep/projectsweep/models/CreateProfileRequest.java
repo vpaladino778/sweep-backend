@@ -1,9 +1,12 @@
 package com.sweep.projectsweep.models;
 
+import lombok.Data;
+
+@Data
 public class CreateProfileRequest {
 
 
-    public String profileName;
+    String profileName;
     String profileDesc;
 
 }
