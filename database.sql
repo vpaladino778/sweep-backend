@@ -1,6 +1,7 @@
 CREATE DATABASE [IF NOT EXISTS] sweep;
 USE SWEEP;
-CREATE TABLE Profiles (
+
+CREATE TABLE Profile (
     id INT AUTO_INCREMENT PRIMARY KEY,
     name VARCHAR(64) NOT NULL,
     description TEXT,
