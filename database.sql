@@ -1,3 +1,5 @@
+CREATE DATABASE [IF NOT EXISTS] sweep;
+USE SWEEP;
 CREATE TABLE Profiles (
     id INT AUTO_INCREMENT PRIMARY KEY,
     name VARCHAR(64) NOT NULL,
@@ -7,14 +9,12 @@ CREATE TABLE Profiles (
     state_province VARCHAR(64) NOT NULL,
     profile_image_line VARCHAR(128) NOT NULL
 );
-0
+
 CREATE TABLE Availability (
 
 );
 
 CREATE TABLE Appointment (
     id INT AUTO_INCREMENT PRIMARY KEY,
-    mentor_id VARCHAR(32),
-
-
-)
+    mentor_id VARCHAR(32)
+);
