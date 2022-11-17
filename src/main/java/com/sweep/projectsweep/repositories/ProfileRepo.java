@@ -16,7 +16,11 @@ public class ProfileRepo {
     public void createProfile(Profile profile) {
         context.insertInto(PROFILE)
                 .set(PROFILE.NAME, profile.getName())
+                .set(PROFILE.DESCRIPTION, profile.getDescription())
+                .set(PROFILE.LINKEDIN_LINK, profile.getLinkedinLink())
                 .set(PROFILE.COUNTRY_ID, profile.getCountryId())
+                .set(PROFILE.STATE_PROVINCE, profile.getStateProvince())
+                .set(PROFILE.PROFILE_IMAGE_LINK, profile.getProfileImageLink())
                 .execute(); // TODO: Finish adding other fields
     }
 
