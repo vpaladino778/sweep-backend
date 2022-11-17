@@ -1,4 +1,5 @@
 package com.sweep.projectsweep.services;
+
 import com.sweep.projectsweep.jooq.tables.pojos.Profile;
 import com.sweep.projectsweep.repositories.ProfileRepo;
 import org.springframework.beans.factory.annotation.Autowired;
