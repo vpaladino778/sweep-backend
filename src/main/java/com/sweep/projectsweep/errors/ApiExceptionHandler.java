@@ -13,7 +13,6 @@ public class ApiExceptionHandler {
     @ExceptionHandler(value = ApiException.class)
     @ResponseBody
     protected ErrorResponse handleApiException(ApiException exception) {
-        log.error("Exception caught!! {}", exception.getErrorCode());
         return new ErrorResponse(exception);
     }
 }
