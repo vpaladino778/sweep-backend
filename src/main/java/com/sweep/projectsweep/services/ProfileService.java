@@ -14,4 +14,8 @@ public class ProfileService {
     public void createProfile(Profile profile) {
         profileRepo.createProfile(profile);
     }
+
+    public Profile getProfile(Integer profileId) {
+        return profileRepo.getProfile(profileId);
+    }
 }

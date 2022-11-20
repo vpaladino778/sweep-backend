@@ -1,4 +1,4 @@
-package com.sweep.projectsweep.models;
+package com.sweep.projectsweep.models.profile;
 
 import lombok.Getter;
 import lombok.experimental.Delegate;
@@ -27,4 +27,3 @@ public class CreateProfileRequest {
 
 
 }
-
