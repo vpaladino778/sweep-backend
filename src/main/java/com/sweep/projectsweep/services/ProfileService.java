@@ -1,4 +1,5 @@
 package com.sweep.projectsweep.services;
+
 import com.sweep.projectsweep.jooq.tables.pojos.Profile;
 import com.sweep.projectsweep.repositories.ProfileRepo;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -12,5 +13,9 @@ public class ProfileService {
 
     public void createProfile(Profile profile) {
         profileRepo.createProfile(profile);
+    }
+
+    public Profile getProfile(Integer profileId) {
+        return profileRepo.getProfile(profileId);
     }
 }
