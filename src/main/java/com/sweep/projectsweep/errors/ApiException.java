@@ -13,6 +13,11 @@ public class ApiException extends ResponseStatusException {
         this.errorCode = errorCode.getErrorCode();
     }
 
+    public ApiException(ErrorCode errorCode, String errorMessage, Exception e) {
+        super(errorCode.getHttpStatus(), String.format(errorCode.getErrorMessage(), errorMessage), e);
+        this.errorCode = errorCode.getErrorCode();
+    }
+
     public ApiException(ErrorCode errorCode) {
         super(errorCode.getHttpStatus());
         this.errorCode = errorCode.getErrorCode();

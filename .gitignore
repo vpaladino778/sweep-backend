@@ -27,7 +27,9 @@ target/
 .sts4-cache
 
 ### IntelliJ IDEA ###
-.idea
+.idea/*
+!.idea/codeStyles
+!.idea/codeStyles/codeStyleConfig.xml
 *.iws
 *.iml
 *.ipr
