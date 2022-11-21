@@ -29,7 +29,7 @@ public class ProfileController {
         try {
             profileIdParsed = Integer.parseInt(profileId);
         } catch (NumberFormatException e) {
-            throw new ApiException(ErrorCode.PROFILE_001, profileId, e);
+            throw new ApiException(ErrorCode.PROFILE_002, profileId, e);
         }
 
         return profileService.getProfile(Integer.parseInt(profileId));
