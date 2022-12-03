@@ -11,11 +11,11 @@ public class ProfileService {
     @Autowired
     ProfileRepo profileRepo;
 
-    public void createProfile(Profile profile) {
-        profileRepo.createProfile(profile);
+    public void createOrUpdateProfile(Profile profile) {
+        profileRepo.createOrUpdateProfile(profile);
     }
 
-    public Profile getProfile(Integer profileId) {
+    public Profile getProfile(String profileId) {
         return profileRepo.getProfile(profileId);
     }
 }

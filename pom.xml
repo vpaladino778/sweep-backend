@@ -15,6 +15,8 @@
 	<description>Sweep project backend</description>
 	<properties>
 		<java.version>17</java.version>
+		<spring-security.version>5.3.4.RELEASE</spring-security.version>
+		<spring.version>5.2.8.RELEASE</spring.version>
 	</properties>
 	<dependencies>
 		<dependency>
@@ -70,6 +72,11 @@
 			<groupId>com.google.firebase</groupId>
 			<artifactId>firebase-admin</artifactId>
 			<version>9.1.1</version>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework.security</groupId>
+			<artifactId>spring-security-core</artifactId>
+			<version>${spring-security.version}</version>
 		</dependency>
 	</dependencies>
 
