@@ -24,8 +24,7 @@ public class UserRepository {
                       .onDuplicateKeyUpdate()
                       .set(USER.EMAIL, user.getEmail())
                       .returningResult(USER)
-                      .fetchOne()
-                      .into(User.class);
+                      .fetchOneInto(User.class);
     }
 
     @Transactional(readOnly = true)

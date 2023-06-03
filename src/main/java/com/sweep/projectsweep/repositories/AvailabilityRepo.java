@@ -2,6 +2,7 @@ package com.sweep.projectsweep.repositories;
 
 import com.sweep.projectsweep.jooq.tables.pojos.Availability;
 import com.sweep.projectsweep.jooq.tables.records.AvailabilityRecord;
+import org.jooq.Configuration;
 import org.jooq.DSLContext;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
@@ -20,8 +21,19 @@ public class AvailabilityRepo {
         context.batchInsert(recordList).execute();
     }
 
+    public void setAvailability(String mentorId, List<AvailabilityRecord> availabilityRecordList) {
+        context.transaction((Configuration trx) -> {
+            // Clear old availability records
+            trx.dsl().deleteFrom(AVAILABILITY).where(AVAILABILITY.MENTOR_ID.eq(mentorId)).execute();
+
+            // Insert new values
+            trx.dsl().batchInsert(availabilityRecordList).execute();
+        });
+
+    }
+
     @Transactional(readOnly = true)
-    public List<Availability> getAvailability(Integer mentorId){
+    public List<Availability> getAvailability(String mentorId){
         List<AvailabilityRecord> recordList = context.selectFrom(AVAILABILITY).where(AVAILABILITY.MENTOR_ID.eq(mentorId)).stream().toList();
         return recordList.stream().map(element -> element.into(Availability.class)).toList();
     }

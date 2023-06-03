@@ -16,6 +16,4 @@ public class ErrorResponse {
         this.errorMessage = exception.getMessage();
     }
 
-
-
 }

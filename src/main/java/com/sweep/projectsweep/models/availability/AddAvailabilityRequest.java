@@ -7,9 +7,9 @@ import java.util.List;
 
 @Getter
 public class AddAvailabilityRequest {
-    private Integer mentorId;
+    private String mentorId;
     @Delegate
-    private List<Availability> availabilityList;
+    private List<Availability> availability;
 
     @Getter
     public static class Availability {

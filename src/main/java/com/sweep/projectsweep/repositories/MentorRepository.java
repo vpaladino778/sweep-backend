@@ -20,11 +20,9 @@ public class MentorRepository {
     public Mentor createOrUpdateMentor(Mentor user) {
         return context.insertInto(MENTOR)
                       .set(MENTOR.USER_UID, user.getUserUid())
-                      .onDuplicateKeyUpdate()
                       .set(MENTOR.EMAIL, user.getEmail())
                       .returningResult(MENTOR)
-                      .fetchOne()
-                      .into(Mentor.class);
+                      .fetchOneInto(Mentor.class);
     }
 
     @Transactional(readOnly = true)
@@ -32,7 +30,7 @@ public class MentorRepository {
         MentorRecord result = context.selectFrom(MENTOR).where(MENTOR.USER_UID.eq(id)).fetchOne();
 
         if (result == null) {
-            throw new ApiException(ErrorCode.PROFILE_001, String.valueOf(id));
+            throw new ApiException(ErrorCode.USER_MANAGEMENT_002, String.valueOf(id));
         }
 
         return result.into(Mentor.class);

@@ -7,7 +7,7 @@ import lombok.Data;
 @Data
 public class ProfileResponse {
 
-    private Integer id;
+    private String id;
     private String name;
     private String description;
     private String linkedinLink;
@@ -16,7 +16,7 @@ public class ProfileResponse {
     private String profileImageLink;
 
     public ProfileResponse(Profile profile) {
-        this.id = profile.getId();
+        this.id = profile.getUserUid();
         this.name = profile.getName();
         this.description = profile.getDescription();
         this.linkedinLink = profile.getLinkedinLink();
